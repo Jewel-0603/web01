@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="地震防災行動指南：平時準備、地震應變、震後處理與防災避難包檢查。">
+<title>地震防災指南｜做好準備，安心應變</title>
+<style>
+:root{
+  --navy:#17324d;--blue:#2d6388;--sky:#eaf3f8;--green:#28745b;--mint:#e8f4ed;
+  --orange:#e89a3c;--red:#b43b35;--rose:#fff0ee;--ink:#243746;--muted:#617282;
+  --paper:#f7fafc;--white:#fff;--line:#dce5eb;--shadow:0 12px 32px rgba(23,50,77,.09);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;font-family:system-ui,-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:var(--ink);background:var(--paper);line-height:1.75}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid #f0a33d;outline-offset:3px}
+.skip-link{position:absolute;left:-9999px;top:8px;background:white;padding:10px;z-index:999}
+.skip-link:focus{left:8px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(220,229,235,.9)}
+.nav-wrap{max-width:1180px;margin:auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;color:var(--navy);text-decoration:none;white-space:nowrap}
+.brand-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--navy);color:white;font-size:21px}
+nav{display:flex;gap:5px;align-items:center}
+nav a{text-decoration:none;font-size:.9rem;font-weight:700;color:#42586a;padding:9px 11px;border-radius:10px}
+nav a:hover{background:var(--sky);color:var(--navy)}
+.menu-toggle{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:7px 12px;color:var(--navy)}
+.container{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+.hero{overflow:hidden;background:linear-gradient(120deg,#eaf3f8 0%,#f6fafc 55%,#e5f2e9 100%);position:relative}
+.hero-inner{max-width:1120px;margin:auto;min-height:500px;padding:68px 22px 64px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:34px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;font-weight:800;color:var(--green);letter-spacing:.08em;background:#fff;padding:7px 12px;border:1px solid #d8e9de;border-radius:999px}
+h1{font-size:clamp(2.4rem,5vw,4.6rem);line-height:1.13;letter-spacing:-.045em;color:var(--navy);margin:20px 0 18px}
+h1 em{font-style:normal;color:var(--green)}
+.hero p{font-size:1.1rem;color:#536879;max-width:570px;margin:0 0 25px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:13px;text-decoration:none;font-weight:800;border:1px solid transparent;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #17324d18}
+.btn-primary{background:var(--navy);color:white}
+.btn-secondary{background:white;border-color:#cfdae2;color:var(--navy)}
+.hero-art{position:relative;min-height:335px;display:grid;place-items:center}
+.art-circle{position:absolute;width:min(370px,85%);aspect-ratio:1;border-radius:50%;background:#d6e9e0}
+.hero-illustration{position:relative;width:100%;max-width:440px;filter:drop-shadow(0 15px 15px rgba(23,50,77,.08))}
+.float-card{position:absolute;background:white;border:1px solid #e3eaf0;border-radius:16px;padding:11px 15px;box-shadow:var(--shadow);font-weight:800;color:var(--navy)}
+.float-card small{display:block;font-size:.75rem;font-weight:600;color:var(--muted)}
+.float-one{left:0;top:22%}.float-two{right:0;bottom:13%}
+.quick-facts{position:relative;margin-top:-1px;background:var(--navy);color:white}
+.fact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.fact{padding:21px 24px;display:flex;align-items:center;gap:13px;border-right:1px solid #ffffff24}
+.fact:last-child{border:0}
+.fact-icon{font-size:1.7rem}.fact strong{display:block;font-size:1rem}.fact span{font-size:.83rem;color:#d1e0eb}
+section{padding:82px 0}
+.section-head{max-width:720px;margin-bottom:34px}
+.kicker{color:var(--green);font-weight:850;font-size:.83rem;letter-spacing:.12em;text-transform:uppercase}
+h2{font-size:clamp(1.9rem,3.5vw,2.8rem);line-height:1.2;letter-spacing:-.03em;color:var(--navy);margin:9px 0 13px}
+.section-head p{margin:0;color:var(--muted);font-size:1.03rem}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:0 5px 18px rgba(23,50,77,.035)}
+.card-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;background:var(--sky);font-size:1.55rem;margin-bottom:17px}
+.card h3{margin:0 0 8px;font-size:1.13rem;color:var(--navy)}
+.card p{margin:0;color:var(--muted);font-size:.94rem}
+.mini-check{display:flex;align-items:flex-start;gap:10px;margin-top:15px;font-size:.9rem;color:#405768}
+.mini-check input{margin-top:6px;accent-color:var(--green);width:17px;height:17px;flex-shrink:0}
+.prep-progress{margin-top:22px;background:white;border:1px solid var(--line);border-radius:16px;padding:16px 19px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.progress-copy{font-weight:800;color:var(--navy);white-space:nowrap}
+.progress-track{height:9px;background:#e9eff3;border-radius:999px;overflow:hidden;flex:1;min-width:120px}
+.progress-fill{height:100%;width:0;background:var(--green);border-radius:999px;transition:width .25s}
+.progress-number{font-size:.9rem;color:var(--muted);font-weight:800}
+.earthquake{background:#fff}
+.emergency-banner{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--rose);border:1px solid #f2d7d3;border-radius:24px;padding:25px 28px;margin-bottom:24px}
+.emergency-banner strong{font-size:clamp(1.45rem,3vw,2.15rem);color:var(--red);letter-spacing:.04em}
+.emergency-banner p{margin:4px 0 0;color:#81544f}
+.pulse-icon{width:64px;height:64px;border-radius:20px;background:white;display:grid;place-items:center;font-size:2rem;flex-shrink:0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.step{border-radius:22px;padding:25px;background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}
+.step-number{font-size:.82rem;letter-spacing:.1em;font-weight:900;color:var(--red)}
+.step h3{font-size:1.55rem;color:var(--navy);margin:7px 0}
+.step p{margin:0;color:var(--muted)}
+.step-emoji{font-size:2.5rem;margin-bottom:5px}
+.scenario-title{margin:37px 0 15px;color:var(--navy);font-size:1.25rem}
+.scenarios{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.scenario{padding:20px;border:1px solid var(--line);border-radius:17px;background:white}
+.scenario h3{margin:0 0 6px;color:var(--navy);font-size:1.05rem}
+.scenario p{margin:0;color:var(--muted);font-size:.93rem}
+.warning{margin-top:20px;background:#fff8e9;border:1px solid #f2dfb5;border-radius:15px;padding:15px 18px;color:#75541d}
+.warning strong{color:#68450e}
+.after-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.after-card{display:flex;gap:16px;background:white;border:1px solid var(--line);border-radius:19px;padding:21px}
+.after-icon{width:47px;height:47px;flex-shrink:0;border-radius:14px;background:var(--mint);display:grid;place-items:center;font-size:1.45rem}
+.after-card h3{margin:0 0 5px;color:var(--navy);font-size:1.08rem}
+.after-card p{margin:0;color:var(--muted);font-size:.94rem}
+.danger-box{background:#fff0ee;border:1px solid #efcbc7;border-radius:18px;padding:21px 23px;margin-top:20px}
+.danger-box h3{margin:0 0 7px;color:var(--red)}
+.danger-box p{margin:0;color:#744b48}
+.kit-section{background:#edf5f1}
+.kit-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}
+.kit-intro{background:var(--navy);color:white;border-radius:24px;padding:27px;position:sticky;top:96px}
+.kit-intro h3{font-size:1.45rem;margin:0 0 10px}
+.kit-intro p{color:#d6e3eb;margin:0 0 18px}
+.kit-count{font-size:2.3rem;font-weight:900;line-height:1.2}
+.kit-count small{font-size:.9rem;font-weight:600;color:#d6e3eb}
+.kit-progress{height:9px;background:#ffffff2a;border-radius:999px;margin:17px 0 12px;overflow:hidden}
+.kit-progress div{height:100%;width:0;background:#8ed4ae;border-radius:999px;transition:width .2s}
+.reset-btn{background:transparent;border:1px solid #ffffff65;color:white;padding:8px 12px;border-radius:10px;font-size:.88rem}
+.kit-groups{display:grid;gap:13px}
+.kit-group{background:white;border:1px solid #d8e5dd;border-radius:18px;overflow:hidden}
+.kit-group h3{margin:0;padding:14px 18px;background:#f8fbf9;color:var(--navy);font-size:1.05rem;border-bottom:1px solid #e4ece7}
+.kit-items{padding:8px 18px 13px;display:grid;grid-template-columns:repeat(2,1fr);gap:2px 18px}
+.kit-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;font-size:.92rem}
+.kit-item input{margin-top:6px;accent-color:var(--green);width:17px;height:17px;flex-shrink:0}
+.kit-item span{flex:1}
+.kit-item input:checked+span{color:#728277;text-decoration:line-through}
+.kit-note{font-size:.9rem;color:#536b5c;margin-top:15px}
+.resources{background:white}
+.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.resource{border:1px solid var(--line);border-radius:20px;padding:23px;display:flex;flex-direction:column;align-items:flex-start;gap:9px;background:white;transition:transform .2s,box-shadow .2s}
+.resource:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.resource-symbol{font-size:1.7rem;background:var(--sky);border-radius:14px;width:52px;height:52px;display:grid;place-items:center}
+.resource h3{margin:3px 0 0;color:var(--navy)}
+.resource p{margin:0;color:var(--muted);font-size:.92rem;flex:1}
+.resource a{font-weight:850;color:var(--green);text-decoration:none;margin-top:8px}
+.resource a:hover{text-decoration:underline}
+.final-cta{background:linear-gradient(120deg,#17324d,#285c70);color:white;padding:48px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta-inner h2{color:white;margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.3rem)}
+.cta-inner p{margin:0;color:#d7e5ec}
+.cta-inner .btn{background:white;color:var(--navy);white-space:nowrap}
+footer{padding:23px 0;background:#10283e;color:#c3d2dc;font-size:.85rem}
+.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer a{color:white}
+.back-top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border:0;border-radius:15px;background:var(--navy);color:white;font-size:1.2rem;box-shadow:var(--shadow);display:none;z-index:40}
+.back-top.show{display:block}
+@media(max-width:900px){
+ nav{display:none;position:absolute;left:0;right:0;top:62px;background:white;border-bottom:1px solid var(--line);padding:12px 20px 18px;flex-direction:column;align-items:stretch}
+ nav.open{display:flex}nav a{padding:11px 12px}.menu-toggle{display:block}
+ .hero-inner{grid-template-columns:1fr  .8fr;gap:10px;padding-top:50px}
+ .grid-4{grid-template-columns:repeat(2,1fr)}.kit-layout{grid-template-columns:1fr}.kit-intro{position:static}
+}
+@media(max-width:640px){
+ .container{width:min(100% - 30px,1120px)}
+ .hero-inner{grid-template-columns:1fr;padding:43px 20px 30px;gap:0}
+ .hero-art{min-height:260px;margin-top:4px}.hero-illustration{max-width:350px}.float-one{left:2%;top:15%}.float-two{right:1%;bottom:9%}
+ .fact-grid{grid-template-columns:1fr}.fact{padding:14px 20px;border-right:0;border-bottom:1px solid #ffffff24}
+ section{padding:60px 0}.grid-4{gap:12px}.card{padding:17px;border-radius:18px}.card-icon{width:45px;height:45px}
+ .emergency-banner{padding:19px;align-items:flex-start}.pulse-icon{width:48px;height:48px;border-radius:15px;font-size:1.5rem}
+ .steps,.scenarios,.after-grid,.resource-grid{grid-template-columns:1fr}
+ .kit-items{grid-template-columns:1fr}.cta-inner{align-items:flex-start;flex-direction:column}
+ h1{font-size:2.7rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要內容</a>
+<header>
+  <div class="nav-wrap">
+    <a class="brand" href="#top" aria-label="地震防災指南首頁"><span class="brand-mark">安</span><span>地震防災指南</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">☰ 選單</button>
+    <nav id="siteNav" aria-label="主要導覽">
+      <a href="#prepare">地震前準備</a><a href="#during">地震發生時</a><a href="#after">地震後處理</a><a href="#kit">避難包清單</a><a href="#resources">相關資源</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">● 防災準備，從今天開始</span>
+      <h1>地震來時，<br><em>做好準備</em><br>就不慌張。</h1>
+      <p>平時多一分準備，災時多一分安全。學會地震應變、備妥緊急物資，一起守護自己與家人。</p>
+      <div class="actions"><a class="btn btn-primary" href="#prepare">開始防災準備 <span aria-hidden="true">↓</span></a><a class="btn btn-secondary" href="#kit">查看避難包清單</a></div>
+    </div>
+    <div class="hero-art" aria-label="家庭防災準備插畫">
+      <div class="art-circle"></div>
+      <div class="float-card float-one">🎒 避難包準備好？<small>每位家人都要有</small></div>
+      <div class="float-card float-two">💧 至少 3 日份<small>飲水與食物備妥</small></div>
+      <svg class="hero-illustration" viewBox="0 0 460 360" role="img" aria-label="房屋、家庭與防災物資的簡潔插畫">
+        <rect x="78" y="104" width="300" height="218" rx="22" fill="#fff" stroke="#bfd4cc" stroke-width="3"/>
+        <path d="M55 125 L228 20 L402 125" fill="#2d6388" stroke="#17324d" stroke-width="8" stroke-linejoin="round"/>
+        <path d="M190 322V223Q190 204 210 204H250Q270 204 270 223V322" fill="#d6e9e0" stroke="#bfd4cc" stroke-width="3"/>
+        <rect x="105" y="153" width="65" height="67" rx="7" fill="#eaf3f8" stroke="#9cbac9" stroke-width="3"/>
+        <path d="M137 154V220M106 186H169" stroke="#9cbac9" stroke-width="3"/>
+        <rect x="292" y="153" width="57" height="70" rx="7" fill="#eaf3f8" stroke="#9cbac9" stroke-width="3"/>
+        <path d="M320 154V222M293 187H348" stroke="#9cbac9" stroke-width="3"/>
+        <circle cx="205" cy="153" r="25" fill="#f0bd8a"/>
+        <path d="M181 148Q184 119 207 126Q228 128 230 151L220 145L207 139L191 150Z" fill="#17324d"/>
+        <path d="M174 205Q176 177 205 177Q234 177 238 205L232 227H181Z" fill="#e89a3c"/>
+        <circle cx="260" cy="171" r="18" fill="#d99465"/>
+        <path d="M242 168Q243 147 261 151Q277 152 279 169L270 162L255 161Z" fill="#17324d"/>
+        <path d="M238 215Q241 190 260 190Q281 190 284 215L278 230H243Z" fill="#28745b"/>
+        <rect x="97" y="268" width="68" height="45" rx="9" fill="#e89a3c" stroke="#b87425" stroke-width="3"/>
+        <path d="M116 268V258Q116 246 130 246Q145 246 145 258V268" fill="none" stroke="#b87425" stroke-width="5"/>
+        <path d="M120 290H142" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="352" cy="270" r="23" fill="#d6e9e0"/>
+        <rect x="330" y="278" width="44" height="35" rx="9" fill="#28745b"/>
+        <path d="M340 275V263Q340 252 352 252Q364 252 364 263V275" fill="none" stroke="#28745b" stroke-width="5"/>
+        <path d="M335 292L347 302L367 283" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M63 325H398" stroke="#9dbbb0" stroke-width="5" stroke-linecap="round"/>
+        <path d="M70 72L80 62M390 57L401 67M420 174L432 174" stroke="#e89a3c" stroke-width="5" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+<div class="quick-facts" aria-label="地震防災三大重點">
+  <div class="container fact-grid">
+    <div class="fact"><span class="fact-icon">🏠</span><div><strong>固定家具</strong><span>減少傾倒與掉落風險</span></div></div>
+    <div class="fact"><span class="fact-icon">🎒</span><div><strong>備妥 3 日物資</strong><span>飲水、食物與必要用品</span></div></div>
+    <div class="fact"><span class="fact-icon">📍</span><div><strong>熟悉集合點</strong><span>與家人約好聯絡方式</span></div></div>
+  </div>
+</div>
+
+<section id="prepare">
+  <div class="container">
+    <div class="section-head"><span class="kicker">01 / Before an earthquake</span><h2>平時多一分準備，<br>災時多一分安全。</h2><p>從家中環境、緊急物資到家庭聯絡計畫，一項一項完成，讓防災成為日常習慣。</p></div>
+    <div class="grid-4">
+      <article class="card"><div class="card-icon">🪑</div><h3>固定大型家具</h3><p>固定書櫃、家具、熱水器與家電；重物放在下層，高處避免放置易掉落物品，櫥櫃門應鎖緊。</p><label class="mini-check"><input type="checkbox" class="prep-check"> 我已檢查家具與櫃門</label></article>
+      <article class="card"><div class="card-icon">🧰</div><h3>準備防災用品</h3><p>備妥滅火器、急救箱與緊急物資，並讓家人知道物品存放位置及使用方式。</p><label class="mini-check"><input type="checkbox" class="prep-check"> 家人知道物資放哪裡</label></article>
+      <article class="card"><div class="card-icon">📍</div><h3>約定聯絡與集合點</h3><p>與家人約定地震後聯絡方式、集合地點，並熟悉住家附近避難場所及逃生路線。</p><label class="mini-check"><input type="checkbox" class="prep-check"> 我已和家人約定集合點</label></article>
+      <article class="card"><div class="card-icon">🚰</div><h3>熟悉水電瓦斯開關</h3><p>確認開關位置與關閉方式，準備至少 3 日份飲水、食物，定期檢查保存期限。</p><label class="mini-check"><input type="checkbox" class="prep-check"> 我已確認開關與物資</label></article>
+    </div>
+    <div class="prep-progress"><span class="progress-copy">居家防災完成度</span><div class="progress-track" role="progressbar" aria-label="居家防災完成度" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0" id="prepBar"><div class="progress-fill" id="prepFill"></div></div><span class="progress-number" id="prepCount">0 / 4 項完成</span></div>
+  </div>
+</section>
+
+<section class="earthquake" id="during">
+  <div class="container">
+    <div class="section-head"><span class="kicker">02 / During an earthquake</span><h2>地震發生時，記住三個動作！</h2><p>先保護自己，避免慌張奔跑。依所在環境採取安全行動。</p></div>
+    <div class="emergency-banner"><div><strong>趴下・掩護・穩住</strong><p>立刻降低重心、保護頭頸，直到搖晃停止。</p></div><div class="pulse-icon" aria-hidden="true">🛡️</div></div>
+    <div class="steps">
+      <article class="step"><div class="step-emoji" aria-hidden="true">🙇</div><div class="step-number">STEP 01</div><h3>趴下</h3><p>降低重心，採取低姿勢，避免因搖晃而跌倒。</p></article>
+      <article class="step"><div class="step-emoji" aria-hidden="true">🪑</div><div class="step-number">STEP 02</div><h3>掩護</h3><p>躲到堅固桌子下，保護頭頸；遠離窗戶、玻璃、吊燈及可能倒落的家具。</p></article>
+      <article class="step"><div class="step-emoji" aria-hidden="true">✊</div><div class="step-number">STEP 03</div><h3>穩住</h3><p>抓住桌腳或掩護物，直到搖晃停止；若沒有桌子，盡可能保護頭頸。</p></article>
+    </div>
+    <h3 class="scenario-title">不同情境，這樣應變</h3>
+    <div class="scenarios">
+      <article class="scenario"><h3>🏠 在室內</h3><p>就地趴下、掩護、穩住。不要慌張衝到室外，也不要搭電梯；若需撤離，使用樓梯。</p></article>
+      <article class="scenario"><h3>🌳 在戶外</h3><p>移往空曠處，遠離建築物、招牌、玻璃、電線桿、圍牆及施工中的工程。</p></article>
+      <article class="scenario"><h3>🚗 開車時</h3><p>避免緊急煞車，減速靠邊停車、關閉引擎，留在車內並收聽官方災情資訊。</p></article>
+    </div>
+    <div class="warning"><strong>⚠️ 山區、河邊或海邊：</strong>遠離崖邊、河岸與海岸，留意落石、土石流及海嘯風險，並依官方警示行動。</div>
+  </div>
+</section>
+
+<section id="after">
+  <div class="container">
+    <div class="section-head"><span class="kicker">03 / After an earthquake</span><h2>搖晃停止，不代表危險解除。</h2><p>保持冷靜，先確認人員與環境安全，再依官方資訊決定下一步。</p></div>
+    <div class="after-grid">
+      <article class="after-card"><div class="after-icon">🩹</div><div><h3>先確認人員狀況</h3><p>檢查自己與家人是否受傷，必要時進行急救，並在確保自身安全下協助周圍需要幫助的人。</p></div></article>
+      <article class="after-card"><div class="after-icon">🔎</div><div><h3>檢查房屋與管線</h3><p>留意瓦斯、水管、電線及建築結構是否受損；若建築物有明顯損壞，應儘速離開。</p></div></article>
+      <article class="after-card"><div class="after-icon">📢</div><div><h3>接收正確資訊</h3><p>使用手機、收音機或官方防災管道掌握消息，勿輕信或轉傳未經證實的災情。</p></div></article>
+      <article class="after-card"><div class="after-icon">🚶</div><div><h3>依指示安全避難</h3><p>避難時以徒步為原則，使用樓梯，留意餘震，聽從地方政府、警察、消防或避難所人員指示。</p></div></article>
+    </div>
+    <div class="danger-box"><h3>⚠️ 聞到瓦斯味或發現瓦斯管受損</h3><p><strong>不要開關電源、不要點火。</strong>輕開門窗後立即離開至安全處，並向相關單位通報。撤離時也請保持救災道路暢通。</p></div>
+  </div>
+</section>
+
+<section class="kit-section" id="kit">
+  <div class="container">
+    <div class="section-head"><span class="kicker">04 / Emergency go-bag</span><h2>你的防災避難包，準備好了嗎？</h2><p>依照分類逐項勾選。每位家庭成員都應有能快速取得的避難包，並定期檢查物品是否過期。</p></div>
+    <div class="kit-layout">
+      <aside class="kit-intro">
+        <div style="font-size:2.2rem;margin-bottom:12px" aria-hidden="true">🎒</div>
+        <h3>避難包檢查進度</h3>
+        <p>準備好一項，就勾選一項。別忘了依家人需求調整內容。</p>
+        <div class="kit-count"><span id="kitDone">0</span><small> / <span id="kitTotal">17</span> 項</small></div>
+        <div class="kit-progress" role="progressbar" aria-label="避難包準備進度" aria-valuemin="0" aria-valuemax="17" aria-valuenow="0" id="kitBar"><div id="kitFill"></div></div>
+        <p id="kitMessage" aria-live="polite">開始檢查你的避難包吧！</p>
+        <button type="button" class="reset-btn" id="resetKit">重新勾選</button>
+      </aside>
+      <div>
+        <div class="kit-groups">
+          <div class="kit-group"><h3>🥤 飲食與飲水</h3><div class="kit-items">
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>飲水（備妥至少 3 日份）</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>不需加熱或簡易可食乾糧</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>緊急糧食</span></label>
+          </div></div>
+          <div class="kit-group"><h3>🩹 醫療與健康</h3><div class="kit-items">
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>個人常用藥</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>簡易急救用品</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>口罩、乾洗手</span></label>
+          </div></div>
+          <div class="kit-group"><h3>🔦 照明與通訊</h3><div class="kit-items">
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>手電筒與備用電池</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>收音機</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>手機充電器、行動電源</span></label>
+          </div></div>
+          <div class="kit-group"><h3>🧥 保暖與防護</h3><div class="kit-items">
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>保暖衣物、雨衣</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>厚手套、哨子</span></label>
+          </div></div>
+          <div class="kit-group"><h3>🪪 證件、金錢與衛生</h3><div class="kit-items">
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>重要證件影本</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>少許現金與零錢</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>濕紙巾與簡易衛生用品</span></label>
+          </div></div>
+          <div class="kit-group"><h3>👶 個別與特殊需求</h3><div class="kit-items">
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>嬰幼兒奶粉、奶瓶、尿布</span></label>
+            <label class="kit-item"><input type="checkbox" class="kit-check"><span>長者、病患照護用品或寵物飼料</span></label>
+          </div></div>
+        </div>
+        <p class="kit-note">小提醒：避難包放在容易取得的位置；定期更換飲水、乾糧與藥品，並依家庭成員的實際需求增減物品。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resources" id="resources">
+  <div class="container">
+    <div class="section-head"><span class="kicker">05 / Official resources</span><h2>需要更多防災資訊？</h2><p>查詢地震資訊、避難準備與官方防災指引，掌握正確且最新的消息。</p></div>
+    <div class="resource-grid">
+      <article class="resource"><div class="resource-symbol">🌦️</div><h3>中央氣象署</h3><p>查詢地震報告、地震資訊與防災知識。</p><a href="https://www.cwa.gov.tw/" target="_blank" rel="noopener noreferrer">前往中央氣象署 ↗</a></article>
+      <article class="resource"><div class="resource-symbol">🚒</div><h3>內政部消防署</h3><p>了解防災準備、避難包及災害應變資訊。</p><a href="https://www.nfa.gov.tw/" target="_blank" rel="noopener noreferrer">前往消防署 ↗</a></article>
+      <article class="resource"><div class="resource-symbol">🏚️</div><h3>消防署地震防災資訊</h3><p>參考地震前、中、後的安全行動與避難準備建議。</p><a href="https://www.nfa.gov.tw/pro/index.php?act=article&code=print&ids=1470&article_id=10534" target="_blank" rel="noopener noreferrer">查看避難包建議 ↗</a></article>
+      <article class="resource"><div class="resource-symbol">🧭</div><h3>氣象署地震防災</h3><p>了解地震發生時的應變方式與相關防災知識。</p><a href="https://scweb.cwa.gov.tw/zh-tw/page/intro/11/" target="_blank" rel="noopener noreferrer">查看地震防災指引 ↗</a></article>
+      <article class="resource"><div class="resource-symbol">🏛️</div><h3>地方政府防災資訊</h3><p>查詢所在地避難收容處所、疏散公告與地方防災訊息。</p><a href="https://www.gov.tw/" target="_blank" rel="noopener noreferrer">前往政府入口網 ↗</a></article>
+      <article class="resource"><div class="resource-symbol">👨‍👩‍👧‍👦</div><h3>家庭防災計畫</h3><p>現在就和家人確認聯絡方式、集合地點與逃生路線。</p><a href="#prepare">回到準備清單 ↑</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container cta-inner"><div><h2>今天多準備一點，明天就多一分安心。</h2><p>固定家具、備妥 3 日物資、記住「趴下、掩護、穩住」。</p></div><a class="btn" href="#prepare">立即檢查居家防災 →</a></div>
+</section>
+</main>
+<footer><div class="container footer-inner"><span>地震防災指南｜讓安全成為日常</span><span>防災資訊請以中央及地方政府最新公告為準。</span></div></footer>
+<button class="back-top" id="backTop" aria-label="回到頁面頂端" title="回到頂端">↑</button>
+<script>
+(() => {
+  const menuToggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('siteNav');
+  menuToggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.textContent = open ? '✕ 關閉' : '☰ 選單';
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰ 選單';
+  }));
+
+  const prepChecks = [...document.querySelectorAll('.prep-check')];
+  const prepFill = document.getElementById('prepFill');
+  const prepCount = document.getElementById('prepCount');
+  const prepBar = document.getElementById('prepBar');
+  function updatePrep() {
+    const done = prepChecks.filter(c => c.checked).length;
+    prepFill.style.width = `${done / prepChecks.length * 100}%`;
+    prepCount.textContent = `${done} / ${prepChecks.length} 項完成`;
+    prepBar.setAttribute('aria-valuenow', String(done));
+  }
+  prepChecks.forEach(c => c.addEventListener('change', updatePrep));
+
+  const kitChecks = [...document.querySelectorAll('.kit-check')];
+  const kitDone = document.getElementById('kitDone');
+  const kitTotal = document.getElementById('kitTotal');
+  const kitFill = document.getElementById('kitFill');
+  const kitBar = document.getElementById('kitBar');
+  const kitMessage = document.getElementById('kitMessage');
+  kitTotal.textContent = kitChecks.length;
+  function updateKit() {
+    const done = kitChecks.filter(c => c.checked).length;
+    const pct = done / kitChecks.length * 100;
+    kitDone.textContent = done;
+    kitFill.style.width = `${pct}%`;
+    kitBar.setAttribute('aria-valuemax', String(kitChecks.length));
+    kitBar.setAttribute('aria-valuenow', String(done));
+    if (done === kitChecks.length) kitMessage.textContent = '太好了！清單已全數勾選，記得定期檢查與更新。';
+    else if (done >= kitChecks.length * .7) kitMessage.textContent = '做得很好！再檢查一下還有哪些物品需要補齊。';
+    else if (done > 0) kitMessage.textContent = '已完成一部分，繼續檢查其他必需品。';
+    else kitMessage.textContent = '開始檢查你的避難包吧！';
+  }
+  kitChecks.forEach(c => c.addEventListener('change', updateKit));
+  document.getElementById('resetKit').addEventListener('click', () => {
+    kitChecks.forEach(c => c.checked = false);
+    updateKit();
+  });
+
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => backTop.classList.toggle('show', window.scrollY > 500), {passive:true});
+  backTop.addEventListener('click', () => window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'}));
+})();
+</script>
+</body>
+</html>
